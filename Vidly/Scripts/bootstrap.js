@@ -770,7 +770,7 @@ if (!jQuery) { throw new Error("Bootstrap requires jQuery") }
     var index = $items.index($items.filter(':focus'))
 
     if (e.keyCode == 38 && index > 0)                 index--                        // up
-    if (e.keyCode == 40 && index < $items.length - 1) index++                        // down
+    if (e.keyCode == 40 && index < $items.length - 1) index        // down
     if (!~index)                                      index=0
 
     $items.eq(index).focus()
@@ -1693,8 +1693,8 @@ if (!jQuery) { throw new Error("Bootstrap requires jQuery") }
       .removeClass('active')
 
     var selector = this.selector
-      + '[data-target="' + target + '"],'
-      + this.selector + '[href="' + target + '"]'
+   '[data-target="' + target + '"],'
+   this.selector + '[href="' + target + '"]'
 
     var active = $(selector)
       .parents('li')
